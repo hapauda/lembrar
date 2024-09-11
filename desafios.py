@@ -28,3 +28,21 @@ def equação_segundo_grau(a,b,c):
 a,b,c = 1,-3,2
 resultado = equação_segundo_grau(a,b,c)
 print(resultado)
+"""""
+Mr. Vincent works in a door mat manufacturing company. One day, he designed a new door mat with the following specifications:
+
+Mat size must be N X M. (N is an odd natural number, and M  is  3  times N .) 
+The design should have 'WELCOME' written in the center.
+The design pattern should only use |, . and - characters.
+"""
+def main_math(n, m):
+    for x in range(1, n, 2):
+        print((".|."* x).center(m, '-'))
+    print("WELCOME".center(m, '-'))
+    for x in range(n-2, 0, -2):
+        print((".|."*x).center(m, '-'))
+    
+if __name__ == '__main__':
+    N, M = map(int, input().split())
+    main_math(N, M)
+    
