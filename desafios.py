@@ -45,4 +45,28 @@ def main_math(n, m):
 if __name__ == '__main__':
     N, M = map(int, input().split())
     main_math(N, M)
-    
+'''''''''
+Given an integer, , print the following values for each integer  from  to :
+
+Decimal
+Octal
+Hexadecimal (capitalized)
+Binary
+'''
+def number_printer(number):
+    oar = len(bin(number)) - 2
+    for i in range(1, number + 1): 
+        # range deve ser o primeiro numero que começa e seu numero final mais 1 ou se for 15 deve usar 16 para mostrar
+        dc =  str(i).rjust(oar)
+        oc = oct(i)[2:].rjust(oar)
+        hexa = hex(i)[2:].rjust(oar)
+        bina =  bin(i)[2:].rjust(oar)
+        # str numero normal
+        # oct para numerosos octal
+        # hex para numeros hexadecimais 
+        # bin para numeros binarios 0001
+        # rjust deve ser usado para centralizar em um loop de caracteres
+        print (dc,oc, hexa, bina)
+if __name__ == '__main__':
+    n = int(12)
+    number_printer(n)
