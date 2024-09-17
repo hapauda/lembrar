@@ -75,3 +75,18 @@ if __name__ == '__main__':
 
 # Different sizes of alphabet rangoli are shown below: in python
 
+import string
+
+def print_rangoli(size):
+    letras = string.ascii_lowercase
+    rows = []
+    for i in range(size):
+        # your code goes here
+        s = '-'.join(letras[size-1:i:-1] + letras[i:size])
+        rows.append(s.center(4*size - 3, '-'))
+    print('\n'.join(rows[:: -1] + rows[1:]))
+    
+
+if __name__ == '__main__':
+    n = int(2)
+    print_rangoli(n)
